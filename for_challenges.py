@@ -2,7 +2,9 @@
 # Необходимо вывести имена всех учеников из списка с новой строки
 
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
+
+for name in names:
+    print(name)
 
 
 # Задание 2
@@ -12,8 +14,9 @@ names = ['Оля', 'Петя', 'Вася', 'Маша']
 # Петя: 4
 
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
 
+for name in names:
+    print(f"{name} - {len(name)} букв.")
 
 # Задание 3
 # Необходимо вывести имена всех учеников из списка, рядом с именем вывести пол ученика
@@ -25,7 +28,12 @@ is_male = {
     'Маша': False,
 }
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
+
+for person in is_male:
+    if is_male[person] is False:
+        print(f"{person} - женщина")
+    else:
+        print(f"{person} - мужчина")
 
 
 # Задание 4
@@ -40,8 +48,12 @@ groups = [
     ['Вася', 'Маша', 'Саша', 'Женя'],
     ['Оля', 'Петя', 'Гриша'],
 ]
-# ???
 
+print(f"Количество групп - {len(groups)}")
+group_number = 0
+for group in groups:
+    group_number += 1
+    print(f"Количество человек в группе {group_number}: {len(group)}")
 
 # Задание 5
 # Для каждой пары учеников нужно с новой строки перечислить учеников, которые в неё входят
@@ -49,9 +61,23 @@ groups = [
 # Группа 1: Вася, Маша
 # Группа 2: Оля, Петя, Гриша
 
-groups = [
-    ['Вася', 'Маша'],
-    ['Оля', 'Петя', 'Гриша'],
-    ['Вася', 'Маша', 'Саша', 'Женя'],
-]
-# ???
+def main():
+    groups = [
+        ['Вася', 'Маша'],
+        ['Оля', 'Петя', 'Гриша'],
+        ['Вася', 'Маша', 'Саша', 'Женя'],
+    ]
+
+    number = 0
+    for group in groups:
+        number += 1
+        print(f"Группа {number}: {transcript(group)}")
+
+def transcript(list):
+    list_transcripted = ''
+    for element in list:
+        list_transcripted = list_transcripted + element + ', '
+    return list_transcripted
+
+if __name__ == main():
+    main()
